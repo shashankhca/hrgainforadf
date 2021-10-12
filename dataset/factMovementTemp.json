@@ -1,0 +1,166 @@
+{
+	"name": "factMovementTemp",
+	"properties": {
+		"description": "A temporary sync of Thomas's factHeadcountChanges query.\n\nhttps://github.com/HCAHRGAnalytics/Data_Team_Queries/blob/653d3da502734854cb11e11a7197f11c9d31152e/Thomas/FactHeadcountChanges_V1.sql",
+		"linkedServiceName": {
+			"referenceName": "hrghriqadatalake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "data_d4a8211b-391c-4f02-9da6-7004c4102417_61923c04-f5a1-409a-b8be-36ebd8dd156d.parquet",
+				"folderPath": "total_movement/2021/07/20",
+				"fileSystem": "edwquery"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "Group_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Division_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Unit_Num",
+				"type": "UTF8"
+			},
+			{
+				"name": "COID_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Date_Id",
+				"type": "INT96"
+			},
+			{
+				"name": "PL_UID",
+				"type": "UTF8"
+			},
+			{
+				"name": "Req_App_UID",
+				"type": "UTF8"
+			},
+			{
+				"name": "Position_Key",
+				"type": "UTF8"
+			},
+			{
+				"name": "Mov_Dir",
+				"type": "UTF8"
+			},
+			{
+				"name": "Action_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Action_Reason_Text",
+				"type": "UTF8"
+			},
+			{
+				"name": "From_Position_SID",
+				"type": "INT32"
+			},
+			{
+				"name": "To_Position_SID",
+				"type": "INT32"
+			},
+			{
+				"name": "From_Process_Level_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Cost_Center",
+				"type": "UTF8"
+			},
+			{
+				"name": "From_Dept_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "To_Dept_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Employee_Num",
+				"type": "INT32"
+			},
+			{
+				"name": "Acute_Experience_Start_Date",
+				"type": "INT96"
+			},
+			{
+				"name": "Requisition_SID",
+				"type": "INT32"
+			},
+			{
+				"name": "COID_Cost_Center",
+				"type": "UTF8"
+			},
+			{
+				"name": "From_Aux_Status",
+				"type": "UTF8"
+			},
+			{
+				"name": "To_Aux_Status",
+				"type": "UTF8"
+			},
+			{
+				"name": "From_Pos_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "To_Pos_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "From_Job_Class",
+				"type": "UTF8"
+			},
+			{
+				"name": "To_Job_Class",
+				"type": "UTF8"
+			},
+			{
+				"name": "From_RN_Grouping",
+				"type": "UTF8"
+			},
+			{
+				"name": "To_RN_Grouping",
+				"type": "UTF8"
+			},
+			{
+				"name": "Chg_Group",
+				"type": "UTF8"
+			},
+			{
+				"name": "From_FTE_Pct",
+				"type": "DECIMAL",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "LOB_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sub_LOB_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Aux_chg",
+				"type": "UTF8"
+			},
+			{
+				"name": "Date_Stamp",
+				"type": "INT96"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

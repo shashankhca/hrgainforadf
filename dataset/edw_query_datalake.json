@@ -1,0 +1,479 @@
+{
+	"name": "edw_query_datalake",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "hrghriqadatalake",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tableName": {
+				"type": "string",
+				"defaultValue": "\"\""
+			},
+			"currentDate": {
+				"type": "string",
+				"defaultValue": "\"\""
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat(dataset().tableName, '/', dataset().currentDate)",
+					"type": "Expression"
+				},
+				"fileSystem": "edwquery"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "Employee_SID",
+				"type": "INT32"
+			},
+			{
+				"name": "Position_SID",
+				"type": "INT32"
+			},
+			{
+				"name": "Date_Id",
+				"type": "INT96"
+			},
+			{
+				"name": "Active_DW_Ind",
+				"type": "UTF8"
+			},
+			{
+				"name": "Group_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Group_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Division_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Division_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Market_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Market_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOB_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "LOB_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sub_LOB_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sub_LOB_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Functional_Dept_Num",
+				"type": "UTF8"
+			},
+			{
+				"name": "Functional_Dept_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sub_Functional_Dept_Num",
+				"type": "UTF8"
+			},
+			{
+				"name": "Sub_Functional_Dept_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "Key_Talent_Group_Text",
+				"type": "UTF8"
+			},
+			{
+				"name": "ILOB_Category_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "ILOB_Sub_Category_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "Business_Unit_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Business_Unit_Segment_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "HR_Company_SID",
+				"type": "INT32"
+			},
+			{
+				"name": "Company_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Company_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Coid",
+				"type": "UTF8"
+			},
+			{
+				"name": "Coid_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Process_Level_SID",
+				"type": "INT32"
+			},
+			{
+				"name": "Process_Level_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Dept_SID",
+				"type": "INT32"
+			},
+			{
+				"name": "Dept_Num",
+				"type": "UTF8"
+			},
+			{
+				"name": "Dept_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Dept_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Location_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Location_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "Addr_Line_1_Text",
+				"type": "UTF8"
+			},
+			{
+				"name": "Addr_Line_2_Text",
+				"type": "UTF8"
+			},
+			{
+				"name": "City_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "State_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Zip_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Employee_Preferred_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Employee_First_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Employee_Middle_Initial_Text",
+				"type": "UTF8"
+			},
+			{
+				"name": "Employee_Last_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Employee_34_Login_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "FTE_Percent",
+				"type": "DECIMAL",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "Employee_Status_SID",
+				"type": "INT32"
+			},
+			{
+				"name": "Employee_Status_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Employee_Status_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "Auxiliary_Status_SID",
+				"type": "INT32"
+			},
+			{
+				"name": "Auxiliary_Status_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Auxiliary_Status_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "Hire_Date",
+				"type": "INT96"
+			},
+			{
+				"name": "Termination_Date",
+				"type": "INT96"
+			},
+			{
+				"name": "Adjusted_Hire_Date",
+				"type": "INT96"
+			},
+			{
+				"name": "Anniversary_Date",
+				"type": "INT96"
+			},
+			{
+				"name": "Service_Year_Num",
+				"type": "DECIMAL",
+				"precision": 38,
+				"scale": 18
+			},
+			{
+				"name": "Job_Experience_Date",
+				"type": "INT96"
+			},
+			{
+				"name": "RN_Experience_Date",
+				"type": "INT96"
+			},
+			{
+				"name": "Birth_Date",
+				"type": "UTF8"
+			},
+			{
+				"name": "Age_Num",
+				"type": "UTF8"
+			},
+			{
+				"name": "Marital_Status_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Ethnic_Origin_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Ethnic_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "Gender_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Veteran_Ind",
+				"type": "UTF8"
+			},
+			{
+				"name": "Veteran_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "Disability_Ind",
+				"type": "UTF8"
+			},
+			{
+				"name": "Employee_SSN",
+				"type": "UTF8"
+			},
+			{
+				"name": "Employee_Home_Phone_Num",
+				"type": "UTF8"
+			},
+			{
+				"name": "Employee_Work_Phone_Num",
+				"type": "UTF8"
+			},
+			{
+				"name": "Email_Text",
+				"type": "UTF8"
+			},
+			{
+				"name": "Work_Addr_Line_1_Text",
+				"type": "UTF8"
+			},
+			{
+				"name": "Work_Addr_Line_2_Text",
+				"type": "UTF8"
+			},
+			{
+				"name": "Work_City_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Work_State_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Work_Zip_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Remote_Flag",
+				"type": "UTF8"
+			},
+			{
+				"name": "Pay_Rate_Amt",
+				"type": "UTF8"
+			},
+			{
+				"name": "Salary_Amt",
+				"type": "UTF8"
+			},
+			{
+				"name": "Job_Class_SID",
+				"type": "INT32"
+			},
+			{
+				"name": "Job_Class_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Job_Class_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "Job_Code_SID",
+				"type": "INT32"
+			},
+			{
+				"name": "Job_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Job_Code_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "Position_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Position_Code_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "Position_Level_Sequence_Num",
+				"type": "INT32"
+			},
+			{
+				"name": "Work_Schedule_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Work_Schedule_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "Pay_Grade_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Pay_Grade_Schedule_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Overtime_Plan_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Overtime_Exempt_Ind",
+				"type": "UTF8"
+			},
+			{
+				"name": "Union_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Union_Desc",
+				"type": "UTF8"
+			},
+			{
+				"name": "Supervisor_SID",
+				"type": "INT32"
+			},
+			{
+				"name": "Supervisor_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Supervisor_Name",
+				"type": "UTF8"
+			},
+			{
+				"name": "Supervisor_Employee_Id",
+				"type": "INT32"
+			},
+			{
+				"name": "Supervisor_34_Id",
+				"type": "UTF8"
+			},
+			{
+				"name": "Supervisor_Position",
+				"type": "UTF8"
+			},
+			{
+				"name": "Supervisor_Email_Text",
+				"type": "UTF8"
+			},
+			{
+				"name": "Lawson_Company_Num",
+				"type": "INT32"
+			},
+			{
+				"name": "Process_Level_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "Employee_Num",
+				"type": "INT32"
+			},
+			{
+				"name": "Source_System_Code",
+				"type": "UTF8"
+			},
+			{
+				"name": "DW_Last_Update_Date_Time",
+				"type": "INT96"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
