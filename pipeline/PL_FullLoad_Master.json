@@ -24,8 +24,12 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlMISource",
-						"sqlReaderQuery": "SELECT DISTINCT [Table_Name]\nFROM Table_List\nWHERE [Table_Name] IN ('hcm_position')\nORDER BY [Table_Name]",
+						"sqlReaderQuery": "SELECT DISTINCT lower([Table_Name]) as Table_Name\nFROM Table_List_Prod\nWHERE [Table_Name] IN ('hcm_Joblevel')\nORDER BY [Table_Name]",
 						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_ETLControlDB",
+						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
 				}
@@ -55,6 +59,10 @@
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
+								"pipeline": {
+									"referenceName": "PL_FullLoad_Child",
+									"type": "PipelineReference"
+								},
 								"waitOnCompletion": true,
 								"parameters": {
 									"param_tableName": {
@@ -145,6 +153,13 @@
 							"value": "Full"
 						}
 					}
+				},
+				"linkedServiceName": {
+					"referenceName": "azdcwqdbshri01",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"databaseName": "ETLControlDB"
+					}
 				}
 			},
 			{
@@ -174,6 +189,10 @@
 							"type": "Expression"
 						},
 						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_ETLControlDB",
+						"type": "DatasetReference"
 					}
 				}
 			},
@@ -247,6 +266,13 @@
 							"value": null
 						}
 					}
+				},
+				"linkedServiceName": {
+					"referenceName": "azdcwqdbshri01",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"databaseName": "ETLControlDB"
+					}
 				}
 			},
 			{
@@ -319,6 +345,13 @@
 						"pipelineLoad": {
 							"value": null
 						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "azdcwqdbshri01",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"databaseName": "ETLControlDB"
 					}
 				}
 			},
