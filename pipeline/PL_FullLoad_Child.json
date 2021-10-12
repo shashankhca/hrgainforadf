@@ -452,20 +452,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataset": {
-						"referenceName": "DS_StorageFolder",
-						"type": "DatasetReference",
-						"parameters": {
-							"param_containerName": {
-								"value": "@activity('Fetch the dynamic query').output.firstRow.ContainerName",
-								"type": "Expression"
-							},
-							"param_folderPath": {
-								"value": "@concat(activity('Fetch the dynamic query').output.firstRow.SourceFolderPath,pipeline().parameters.param_currentDate)",
-								"type": "Expression"
-							}
-						}
-					},
 					"fieldList": [
 						"childItems"
 					],
@@ -497,20 +483,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataset": {
-						"referenceName": "DS_StorageFolder",
-						"type": "DatasetReference",
-						"parameters": {
-							"param_containerName": {
-								"value": "@activity('Fetch the dynamic query').output.firstRow.ContainerName",
-								"type": "Expression"
-							},
-							"param_folderPath": {
-								"value": "@concat(activity('Fetch the dynamic query').output.firstRow.SourceFolderPath,pipeline().parameters.param_currentDate)",
-								"type": "Expression"
-							}
-						}
-					},
 					"fieldList": [
 						"childItems"
 					],
@@ -641,20 +613,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataset": {
-						"referenceName": "DS_StorageFolder",
-						"type": "DatasetReference",
-						"parameters": {
-							"param_containerName": {
-								"value": "@activity('Fetch the dynamic query').output.firstRow.ContainerName",
-								"type": "Expression"
-							},
-							"param_folderPath": {
-								"value": "@concat(activity('Fetch the dynamic query').output.firstRow.SourceFolderPath,pipeline().parameters.param_currentDate)",
-								"type": "Expression"
-							}
-						}
-					},
 					"enableLogging": false,
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
@@ -783,20 +741,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataset": {
-						"referenceName": "DS_StorageFolder",
-						"type": "DatasetReference",
-						"parameters": {
-							"param_containerName": {
-								"value": "@activity('Fetch the dynamic query').output.firstRow.ContainerName",
-								"type": "Expression"
-							},
-							"param_folderPath": {
-								"value": "@concat(activity('Fetch the dynamic query').output.firstRow.SourceFolderPath,pipeline().parameters.param_currentDate)",
-								"type": "Expression"
-							}
-						}
-					},
 					"enableLogging": false,
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
