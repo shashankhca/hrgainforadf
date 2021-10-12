@@ -1,0 +1,31 @@
+{
+	"name": "hri_data_model_azure_sql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azdcwqdbshri01",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"databaseName": "hri_data_model"
+			}
+		},
+		"parameters": {
+			"tableName": {
+				"type": "string",
+				"defaultValue": "\"\""
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlMITable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "dbo",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().tableName",
+				"type": "Expression"
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"name": "DS_ETLConfig_TableListV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azdcwqdbshri01",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"databaseName": "ETLControlDB"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlMITable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "table_list_backup"
+		}
+	}
+}

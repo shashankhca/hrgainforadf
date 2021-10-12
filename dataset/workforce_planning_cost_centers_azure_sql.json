@@ -1,0 +1,97 @@
+{
+	"name": "workforce_planning_cost_centers_azure_sql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azdcwqdbshri01",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"databaseName": "hr_insights_dev"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlMITable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "created_at",
+				"type": "datetimeoffset",
+				"scale": 7
+			},
+			{
+				"name": "updated_at",
+				"type": "datetimeoffset",
+				"scale": 7
+			},
+			{
+				"name": "deleted_at",
+				"type": "datetimeoffset",
+				"scale": 7
+			},
+			{
+				"name": "coid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "department_number",
+				"type": "nvarchar"
+			},
+			{
+				"name": "department_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "facility_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "market_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "division_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "group_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "is_closed",
+				"type": "bit"
+			},
+			{
+				"name": "is_user_created",
+				"type": "bit"
+			},
+			{
+				"name": "created_by",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "opening_month_end_date",
+				"type": "date"
+			},
+			{
+				"name": "functional_dept_desc",
+				"type": "nvarchar"
+			},
+			{
+				"name": "sub_functional_dept_desc",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "workforce_planning_cost_centers",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
