@@ -1,0 +1,17 @@
+{
+	"name": "EDWHR",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "EDW",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "TeradataTable",
+		"schema": [],
+		"typeProperties": {
+			"database": "edwhr_views",
+			"table": "employee_roster"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

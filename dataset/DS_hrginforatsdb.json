@@ -1,0 +1,27 @@
+{
+	"name": "DS_hrginforatsdb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azdcwqdbshri01",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"databaseName": "hrginforatsdb"
+			}
+		},
+		"parameters": {
+			"param_tableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlMITable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().param_tableName",
+				"type": "Expression"
+			}
+		}
+	}
+}

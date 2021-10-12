@@ -1,0 +1,34 @@
+{
+	"name": "DS_StorageFolder",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "tempstoragefordbtosynp",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"param_containerName": {
+				"type": "string"
+			},
+			"param_folderPath": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@dataset().param_folderPath",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().param_containerName",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

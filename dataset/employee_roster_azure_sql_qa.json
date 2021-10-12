@@ -1,0 +1,28 @@
+{
+	"name": "employee_roster_azure_sql_qa",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azdcwqdbshri01",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"databaseName": "employee_roster_qa"
+			}
+		},
+		"parameters": {
+			"tableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlMITable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().tableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

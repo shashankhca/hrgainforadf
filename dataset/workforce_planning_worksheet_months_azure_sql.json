@@ -1,0 +1,20 @@
+{
+	"name": "workforce_planning_worksheet_months_azure_sql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azdcwqdbshri01",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"databaseName": "hr_insights_dev"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlMITable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "workforce_planning_worksheet_months"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

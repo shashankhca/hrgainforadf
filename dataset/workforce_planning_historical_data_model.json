@@ -1,0 +1,16 @@
+{
+	"name": "workforce_planning_historical_data_model",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azdcwqdbshri01",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlMITable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "workforce_planning_historical_data_model"
+		}
+	}
+}
