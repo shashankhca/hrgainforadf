@@ -1,12 +1,30 @@
 {
 	"name": "DS_StorageFolder",
 	"properties": {
+		"parameters": {
+			"param_containerName": {
+				"type": "string"
+			},
+			"param_folderPath": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
-		"type": "AzureSqlMITable",
-		"schema": [],
+		"type": "Parquet",
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "ETLConfig_TableList"
-		}
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@dataset().param_folderPath",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().param_containerName",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
 	}
 }

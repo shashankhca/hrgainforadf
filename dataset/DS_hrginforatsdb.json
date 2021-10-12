@@ -1,12 +1,20 @@
 {
 	"name": "DS_hrginforatsdb",
 	"properties": {
+		"parameters": {
+			"param_tableName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlMITable",
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "ETLConfig_TableList"
+			"table": {
+				"value": "@dataset().param_tableName",
+				"type": "Expression"
+			}
 		}
 	}
 }
