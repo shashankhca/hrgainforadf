@@ -326,7 +326,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[usp_TableLog]",
 					"storedProcedureParameters": {
 						"fileCount": {
 							"value": null,
@@ -405,6 +404,10 @@
 							}
 						}
 					}
+				},
+				"linkedServiceName": {
+					"referenceName": "hri_data_model_azure_sql_service",
+					"type": "LinkedServiceReference"
 				}
 			},
 			{
