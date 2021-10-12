@@ -1,0 +1,404 @@
+{
+	"name": "PL_FullLoad_Master",
+	"properties": {
+		"activities": [
+			{
+				"name": "Get the list of tables",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "Get the RunAuditID",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlMISource",
+						"sqlReaderQuery": "SELECT DISTINCT lower([Table_Name]) as Table_Name\nFROM Table_List_prod \nORDER BY [Table_Name]",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_ETLControlDB",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "Loop through the table names",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Set the Current Date",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Get the list of tables').output.value",
+						"type": "Expression"
+					},
+					"isSequential": false,
+					"activities": [
+						{
+							"name": "PL_FullLoad_Child",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "PL_FullLoad_Child",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true,
+								"parameters": {
+									"param_tableName": {
+										"value": "@item().Table_Name",
+										"type": "Expression"
+									},
+									"param_masterPipelineID": {
+										"value": "@pipeline().RunId",
+										"type": "Expression"
+									},
+									"param_masterPipelineName": {
+										"value": "@pipeline().Pipeline",
+										"type": "Expression"
+									},
+									"param_currentDate": {
+										"value": "@variables('var_currentDate')",
+										"type": "Expression"
+									}
+								}
+							}
+						}
+					]
+				}
+			},
+			{
+				"name": "Log Pipeline start",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[usp_PipelineLog]",
+					"storedProcedureParameters": {
+						"endDateTime": {
+							"value": null,
+							"type": "DateTime"
+						},
+						"isStart": {
+							"value": "1",
+							"type": "String"
+						},
+						"pipelineID": {
+							"value": {
+								"value": "@pipeline().RunId",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"pipelineName": {
+							"value": {
+								"value": "@pipeline().Pipeline",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"runAuditID": {
+							"value": null,
+							"type": "Int64"
+						},
+						"startDatetime": {
+							"value": {
+								"value": "@utcnow()",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						},
+						"status": {
+							"value": null,
+							"type": "String"
+						},
+						"triggerName": {
+							"value": {
+								"value": "@pipeline().TriggerName",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"pipelineType": {
+							"value": "Master"
+						},
+						"pipelineLoad": {
+							"value": "Full"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "azdcwqdbshri01",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"databaseName": "ETLControlDB"
+					}
+				}
+			},
+			{
+				"name": "Get the RunAuditID",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "Log Pipeline start",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlMISource",
+						"sqlReaderQuery": {
+							"value": "@concat('SELECT MAX([RunAuditID]) AS [RunAuditID] FROM ControlETLRun WHERE [Pipeline_ID] = ''',pipeline().RunId,''' AND [Pipeline_Name] = ''',pipeline().Pipeline,'''')",
+							"type": "Expression"
+						},
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_ETLControlDB",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "Log Pipeline end_Success",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Loop through the table names",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[usp_PipelineLog]",
+					"storedProcedureParameters": {
+						"endDateTime": {
+							"value": {
+								"value": "@utcnow()",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						},
+						"isStart": {
+							"value": "0",
+							"type": "String"
+						},
+						"pipelineID": {
+							"value": {
+								"value": "@pipeline().RunId",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"pipelineName": {
+							"value": null,
+							"type": "String"
+						},
+						"runAuditID": {
+							"value": {
+								"value": "@activity('Get the RunAuditID').output.firstRow.RunAuditID",
+								"type": "Expression"
+							},
+							"type": "Int64"
+						},
+						"startDatetime": {
+							"value": null,
+							"type": "DateTime"
+						},
+						"status": {
+							"value": "Success",
+							"type": "String"
+						},
+						"triggerName": {
+							"value": null,
+							"type": "String"
+						},
+						"pipelineType": {
+							"value": null
+						},
+						"pipelineLoad": {
+							"value": null
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "azdcwqdbshri01",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"databaseName": "ETLControlDB"
+					}
+				}
+			},
+			{
+				"name": "Log Pipeline end_Failure",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Loop through the table names",
+						"dependencyConditions": [
+							"Failed",
+							"Skipped"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[usp_PipelineLog]",
+					"storedProcedureParameters": {
+						"endDateTime": {
+							"value": {
+								"value": "@utcnow()",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						},
+						"isStart": {
+							"value": "0",
+							"type": "String"
+						},
+						"pipelineID": {
+							"value": {
+								"value": "@pipeline().RunId",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"pipelineName": {
+							"value": null,
+							"type": "String"
+						},
+						"runAuditID": {
+							"value": {
+								"value": "@activity('Get the RunAuditID').output.firstRow.RunAuditID",
+								"type": "Expression"
+							},
+							"type": "Int64"
+						},
+						"startDatetime": {
+							"value": null,
+							"type": "DateTime"
+						},
+						"status": {
+							"value": "Failure",
+							"type": "String"
+						},
+						"triggerName": {
+							"value": null,
+							"type": "String"
+						},
+						"pipelineType": {
+							"value": null
+						},
+						"pipelineLoad": {
+							"value": null
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "azdcwqdbshri01",
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"databaseName": "ETLControlDB"
+					}
+				}
+			},
+			{
+				"name": "Set the Current Date",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Get the list of tables",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "var_currentDate",
+					"value": {
+						"value": "@formatDateTime(utcnow(),'yyyy-MM-dd')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"param_sourceSystem": {
+				"type": "string",
+				"defaultValue": "HRGA"
+			}
+		},
+		"variables": {
+			"var_SQLString": {
+				"type": "String"
+			},
+			"var_RunAuditID": {
+				"type": "String"
+			},
+			"var_srcCount": {
+				"type": "String"
+			},
+			"var_tgtCount": {
+				"type": "String"
+			},
+			"var_currentDate": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
