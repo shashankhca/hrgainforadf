@@ -1,0 +1,12 @@
+{
+	"name": "DS_hrginforatsdb",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlMITable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ETLConfig_TableList"
+		}
+	}
+}
