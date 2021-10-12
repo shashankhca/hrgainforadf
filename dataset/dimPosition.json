@@ -15,7 +15,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "@concat('edwhr_bi_views_dimPosition/', dataset().currentDate)",
+				"folderPath": {
+					"value": "@concat('edwhr_bi_views_dimPosition/', dataset().currentDate)",
+					"type": "Expression"
+				},
 				"fileSystem": "hridatamodel"
 			},
 			"compressionCodec": "snappy"
@@ -70,5 +73,6 @@
 				"type": "UTF8"
 			}
 		]
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

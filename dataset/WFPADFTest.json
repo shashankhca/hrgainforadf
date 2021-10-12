@@ -15,11 +15,15 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "@concat('test/', dataset().currentDate)",
+				"folderPath": {
+					"value": "@concat('test/', dataset().currentDate)",
+					"type": "Expression"
+				},
 				"fileSystem": "workforceplanning"
 			},
 			"compressionCodec": "snappy"
 		},
 		"schema": []
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }

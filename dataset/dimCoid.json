@@ -110,5 +110,6 @@
 				"type": "UTF8"
 			}
 		]
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
 }
