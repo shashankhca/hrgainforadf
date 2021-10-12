@@ -1,6 +1,10 @@
 {
 	"name": "DS_ETLControlDB",
 	"properties": {
+		"linkedServiceName": {
+			"referenceName": "hri_data_model_azure_sql_service",
+			"type": "LinkedServiceReference"
+		},
 		"annotations": [],
 		"type": "AzureSqlMITable",
 		"schema": [],
