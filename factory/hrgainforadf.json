@@ -1,9 +1,0 @@
-{
-	"name": "hrgainforadf",
-	"location": "eastus2",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "99d39550-c922-43ee-b865-a28a53cd8ca9",
-		"tenantId": "335a6d75-c3eb-4b1a-ac08-d49338816ca0"
-	}
-}
