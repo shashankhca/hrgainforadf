@@ -1,0 +1,9 @@
+{
+	"name": "hrgahriinfordata",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c6760e34-4e04-4cef-ad98-7090c0f810ca",
+		"tenantId": "335a6d75-c3eb-4b1a-ac08-d49338816ca0"
+	}
+}
