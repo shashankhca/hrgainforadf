@@ -1,0 +1,9 @@
+C:\Users\GPI5416\Desktop\SQL CICD\SQLObjectsDB\bin\Debug\SQLObjectsDB.dacpac
+C:\Users\GPI5416\Desktop\SQL CICD\SQLObjectsDB\bin\Debug\SQLObjectsDB.dll
+C:\Users\GPI5416\Desktop\SQL CICD\SQLObjectsDB\bin\Debug\SQLObjectsDB.pdb
+C:\Users\GPI5416\Desktop\SQL CICD\SQLObjectsDB\obj\Debug\Model.xml
+C:\Users\GPI5416\Desktop\SQL CICD\SQLObjectsDB\obj\Debug\refactor.xml
+C:\Users\GPI5416\Desktop\SQL CICD\SQLObjectsDB\obj\Debug\postdeploy.sql
+C:\Users\GPI5416\Desktop\SQL CICD\SQLObjectsDB\obj\Debug\predeploy.sql
+C:\Users\GPI5416\Desktop\SQL CICD\SQLObjectsDB\obj\Debug\SQLObjectsDB.dll
+C:\Users\GPI5416\Desktop\SQL CICD\SQLObjectsDB\obj\Debug\SQLObjectsDB.pdb

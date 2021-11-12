@@ -1,0 +1,2539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="130" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="SQLObjectsDB.dll" />
+			<Metadata Name="FileName" Value="C:\USERS\GPI5416\DESKTOP\SQL CICD\SQLOBJECTSDB\OBJ\DEBUG\SQLOBJECTSDB.DLL" />
+			<Metadata Name="AssemblyName" Value="SQLObjectsDB" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\GPI5416\Desktop\SQL CICD\SQLObjectsDB\obj\Debug\SQLObjectsDB.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[(getdate())]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Error_logging]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[Error_logging].[Error_Datetime]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[ADLS_Hierarchy]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ADLS_Hierarchy].[ID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ADLS_Hierarchy].[SourceSystem]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ADLS_Hierarchy].[Table_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="250" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ADLS_Hierarchy].[Layer]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ADLS_Hierarchy].[ContainerName]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ADLS_Hierarchy].[Source_Folder_path]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="150" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ADLS_Hierarchy].[Archive_Folder_Path]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ADLS_Hierarchy].[Failure_Folder_Path]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[ControlETLRun]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ControlETLRun].[RunAuditID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ControlETLRun].[SourceSystem]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ControlETLRun].[Pipeline_ID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="250" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ControlETLRun].[Pipeline_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ControlETLRun].[Pipeline_Type]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="15" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ControlETLRun].[Pipeline_Load]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="15" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ControlETLRun].[StartDatetime]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ControlETLRun].[EndDatetime]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ControlETLRun].[Elapsed_Time]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[time]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ControlETLRun].[Status]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="8" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ControlETLRun].[Trigger_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[ControlETLRun].[Trigger_Type]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Email_Configuration]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Email_Configuration].[Email_Configuration_ID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Email_Configuration].[Email_Subject]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Email_Configuration].[Email_Receipient_List]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Email_Configuration].[Email_Send_Status]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Email_Configuration].[Email_Notification_Send_Time]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Error_logging]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Error_logging].[Pipeline_ID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Error_logging].[Pipleline_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Error_logging].[Error_Description]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Error_logging].[Error_Datetime]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="3" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Table_List]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List].[Table_ID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List].[Table_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List].[Column_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List].[Transformed_Column_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List].[Transformed_Flag]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List].[Is_Active_Flag]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List].[InsertionDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List].[Hash_Column]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="500" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List].[is_Hash]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List].[is_Key]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="300" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List].[is_Table_Active]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Table_List_bkp_20211025]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List_bkp_20211025].[Table_ID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List_bkp_20211025].[Table_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List_bkp_20211025].[Column_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List_bkp_20211025].[Transformed_Column_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List_bkp_20211025].[Transformed_Flag]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List_bkp_20211025].[Is_Active_Flag]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List_bkp_20211025].[InsertionDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List_bkp_20211025].[Hash_Column]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="500" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List_bkp_20211025].[is_Hash]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Table_List_bkp_20211025].[is_Key]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="300" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[TableLog]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[Pipeline_TableLogID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[SourceSystem]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[MasterPipeline_ID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="400" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[MasterPipeline_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[Pipeline_ID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="400" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[Pipeline_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[Table_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[Load_Start_Time]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[Load_End_Time]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[Elapsed_Time]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="7" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[time]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[Records_fetched]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[Insert_count_file]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[Insert_count_DB]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[Update_count_DB]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[SourceCount]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[TargetCount]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[TableLog].[Status]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="8" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_GenerateSQLString]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[      
+  BEGIN      
+    DECLARE @SQLString			VARCHAR(MAX)      
+    DECLARE @createwatermark	VARCHAR(100)      
+    DECLARE @updatewatermark	VARCHAR(100)      
+    DECLARE @keyColumns         VARCHAR(500)      
+    DECLARE @hashColumns        VARCHAR(MAX)      
+    DECLARE @containerName      VARCHAR(100)      
+    DECLARE @srcFolderPath      VARCHAR(150)      
+    DECLARE @archiveFolderPath  VARCHAR(150)      
+    DECLARE @failureFolderPath  VARCHAR(150)      
+ BEGIN TRY     
+  IF(@loadType) = 'Full'      
+   BEGIN    
+    UPDATE Watermark_Tbllist
+	SET [CreateTimestamp_LastFetched_Date] = NULL
+	WHERE [Table_Name] = @tableName
+
+    SELECT @SQLstring = 'SELECT ' + STRING_AGG(ISNULL(CASE WHEN [Transformed_Flag] = 1       
+						 THEN [Transformed_Column_Name] ELSE '"' + [Column_Name] + '"' END,''),',') + ' FROM ' + [Table_Name]       
+    FROM [dbo].[Table_List]      
+    WHERE [Table_Name] = @tableName      
+    AND [Is_Active_Flag] = 1      
+    GROUP BY [Table_Name]      
+   END      
+      
+ ELSE      
+  BEGIN      
+    SELECT @SQLstring = 'SELECT ' + STRING_AGG(ISNULL(CASE WHEN Src.[Transformed_Flag] = 1       
+						 THEN Src.[Transformed_Column_Name] ELSE '"' + Src.[Column_Name] + '"' END,''),',') + ' FROM ' + Src.[Table_Name]       
+      + ' WHERE [' + Dst.[CreateTimestamp_WaterMark] + '] > ''' +  ISNULL(CONVERT(VARCHAR(40),Dst.[CreateTimestamp_LastFetched_Date],121),'1900-01-01 00:00:00') + ''''    
+    FROM [dbo].[Table_List] Src      
+    INNER JOIN Watermark_Tbllist Dst      
+    ON Src.[Table_Name] = Dst.[Table_Name]      
+    WHERE Src.[Table_Name] = @tableName      
+    AND [Is_Active_Flag] = 1      
+    GROUP BY Src.[Table_Name],Dst.[CreateTimestamp_WaterMark],Dst.[CreateTimestamp_LastFetched_Date]
+  END
+      
+    SELECT @createwatermark = [CreateTimestamp_WaterMark],      
+           @updatewatermark = [UpdateTimestamp_WaterMark]      
+    FROM [dbo].[Watermark_Tbllist]      
+    WHERE [Table_Name] = @tableName      
+      
+    SELECT @keyColumns = STRING_AGG(ISNULL('"' + [Column_name] + '"',''),',') 
+    FROM Table_List      
+    WHERE [Table_Name] = @tableName      
+    AND [Is_Key] = 1
+    AND [Is_Active_Flag] = 1
+     
+/* Block if Mapping Data flow used 
+
+    SELECT @hashColumns = STRING_AGG(ISNULL([Hash_Column],''),',')      
+                          FROM [dbo].[Table_List]      
+                          WHERE [Table_Name] = @tableName      
+                          AND [is_Hash] = 1    
+*/
+
+/* Block if Azure SQL DB used */
+
+    SELECT @hashColumns = STRING_AGG(ISNULL('"' + CAST([Hash_Column] AS VARCHAR(MAX)) + '"',''),',')      
+    FROM [dbo].[Table_List]      
+    WHERE [Table_Name] = @tableName      
+    AND [is_Hash] = 1   
+    AND [Is_Active_Flag] = 1                      
+      
+    SELECT @containerName       = [ContainerName],      
+           @srcFolderPath       = [Source_Folder_path],      
+           @archiveFolderPath   = [Archive_Folder_Path],      
+           @failureFolderPath   = [Failure_Folder_Path]      
+    FROM ADLS_Hierarchy      
+    WHERE [Table_Name] = @tableName      
+    AND [Layer] = 'RAW'      
+              
+    SELECT @SQLstring AS [SQLString], @createwatermark AS [CreateTimestamp_Column], @updatewatermark AS [UpdateTimestamp_Column], @keyColumns AS [KeyColumns],       
+           @hashColumns AS [HashColumns], @containerName AS [ContainerName], @srcFolderPath AS [SourceFolderPath], @archiveFolderPath AS [ArchiveFolderPath], @failureFolderPath AS [FailureFolderPath]      
+                 
+  END TRY
+  BEGIN CATCH  
+    -- Execute error retrieval routine.  
+    EXECUTE dbo.usp_GetErrorInfo;  
+END CATCH;  
+  END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_GenerateSQLString].[@loadType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Watermark_Tbllist]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Watermark_Tbllist].[CreateTimestamp_LastFetched_Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Watermark_Tbllist].[Table_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_GenerateSQLString].[@tableName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List].[Transformed_Flag]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List].[Transformed_Column_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List].[Column_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List].[Table_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List].[Is_Active_Flag]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List].[Table_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Watermark_Tbllist].[Table_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List].[Transformed_Flag]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List].[Transformed_Column_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List].[Column_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Watermark_Tbllist].[CreateTimestamp_WaterMark]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Watermark_Tbllist].[CreateTimestamp_LastFetched_Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List].[Is_Active_Flag]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Watermark_Tbllist].[CreateTimestamp_WaterMark]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Watermark_Tbllist].[UpdateTimestamp_WaterMark]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List].[is_Key]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List].[Hash_Column]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Table_List].[is_Hash]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ADLS_Hierarchy]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ADLS_Hierarchy].[ContainerName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ADLS_Hierarchy].[Source_Folder_path]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ADLS_Hierarchy].[Archive_Folder_Path]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ADLS_Hierarchy].[Failure_Folder_Path]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ADLS_Hierarchy].[Table_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ADLS_Hierarchy].[Layer]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_GetErrorInfo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_GenerateSQLString].[@tableName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_GenerateSQLString].[@loadType]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="1257" />
+				<Property Name="Length" Value="5104" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="/***************************************************************************************************      &#xD;&#xA;Procedure:          [dbo].[usp_GenerateSQLString]      &#xD;&#xA;Create Date:        2021-09-22      &#xD;&#xA;Author:             Viraj S. Dhokare      &#xD;&#xA;Description:        Procedure to generate a dynamic SQL query for full/incremental load.      &#xD;&#xA;****************************************************************************************************      &#xD;&#xA;SUMMARY OF CHANGES      &#xD;&#xA;      &#xD;&#xA;Date(yyyy-mm-dd)    Author              Comments      &#xD;&#xA;------------------- ------------------- ------------------------------------------------------------      &#xD;&#xA;2021-09-22          Viraj S. Dhokare    Initial Creation.      &#xD;&#xA;2021-09-28          Viraj S. Dhokare    Added logic to dynamically create a SQLString with the       &#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;WaterMark column and value, fetch the watermark column name.     &#xD;&#xA;2021-10-04          Viraj S. Dhokare    Added logic to fetch the SourceFolderPath, ArchiveFolderPath      &#xD;&#xA;                                        and the FailureFolderPath. &#xD;&#xA;2021-11-08          Shashank Jain&#x9;&#x9;Added Try and Catch Block&#xD;&#xA;      &#xD;&#xA;*******************************************************************************************************/      &#xD;&#xA;  &#xD;&#xA;CREATE PROCEDURE [dbo].[usp_GenerateSQLString]      &#xD;&#xA; @tableName VARCHAR(100),      &#xD;&#xA; @loadType VARCHAR(10)          &#xD;&#xA;      &#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_GetErrorInfo]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[  
+SELECT  
+    ERROR_NUMBER() AS ErrorNumber  
+    ,ERROR_SEVERITY() AS ErrorSeverity  
+    ,ERROR_STATE() AS ErrorState  
+    ,ERROR_PROCEDURE() AS ErrorProcedure  
+    ,ERROR_LINE() AS ErrorLine  
+    ,ERROR_MESSAGE() AS ErrorMessage;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="283" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE usp_GetErrorInfo  &#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_pipelineErrorLog]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+  BEGIN
+BEGIN TRY   
+   INSERT INTO [dbo].[Error_logging] (Pipeline_ID,[Pipleline_Name],[Error_Description])
+   SELECT @Pipeline_ID,@Pipeline_Name,@Error_Description
+
+END TRY
+
+BEGIN CATCH  
+    -- Execute error retrieval routine.  
+    EXECUTE dbo.usp_GetErrorInfo;  
+END CATCH;  
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Error_logging]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Error_logging].[Pipeline_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Error_logging].[Pipleline_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Error_logging].[Error_Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_pipelineErrorLog].[@Pipeline_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_pipelineErrorLog].[@Pipeline_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_pipelineErrorLog].[@Error_Description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_GetErrorInfo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_pipelineErrorLog].[@Pipeline_ID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_pipelineErrorLog].[@Pipeline_Name]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_pipelineErrorLog].[@Error_Description]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="130" />
+				<Property Name="Length" Value="617" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="/*&#xD;&#xA;Author&#x9;&#x9;Shashank Jain&#xD;&#xA;Date&#x9;&#x9;24/09/2021&#xD;&#xA;Jira&#x9;&#x9;HRGA-1272&#xD;&#xA;Comments&#x9;Error logging stored proc for pipeline failure.&#xD;&#xA;*/&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;CREATE PROCEDURE [dbo].[usp_pipelineErrorLog](&#xD;&#xA;&#x9;@Pipeline_ID&#x9;&#x9;&#x9;&#x9;&#x9;VARCHAR(100),&#xD;&#xA;&#x9;@Pipeline_Name                  VARCHAR(100) ,     &#xD;&#xA;&#x9;@Error_Description              VARCHAR(MAX)&#xD;&#xA;&#x9;)&#xD;&#xA;&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PipelineLog]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[    
+ BEGIN    
+ BEGIN TRY
+ IF(@isStart) = 1    
+     BEGIN    
+	  INSERT INTO [ControlETLRun] ([SourceSystem],[Pipeline_ID],[Pipeline_Name],[Pipeline_Type],[Pipeline_Load],[StartDatetime],[Trigger_Name],[Trigger_Type])    
+	  VALUES (@sourceSystem,@pipelineID,@pipelineName,@pipelineType,@pipelineLoad,@startDatetime,@triggerName,@triggerType)    
+     END    
+      
+   ELSE    
+    BEGIN    
+		UPDATE ControlETLRun    
+		SET [EndDatetime] = @endDateTime,    
+			[Status]      = @status    
+		WHERE [Pipeline_ID] = @pipelineID    
+		AND [RunAuditID]    = @runAuditID
+	
+		UPDATE ControlETLRun    
+		SET [Elapsed_Time]  = CAST(([EndDatetime]-[StartDatetime]) AS TIME(0))    
+		WHERE [Pipeline_ID] = @pipelineID    
+		AND [RunAuditID]    = @runAuditID    
+    END    
+	END TRY
+	BEGIN CATCH  
+    -- Execute error retrieval routine.  
+    EXECUTE dbo.usp_GetErrorInfo;  
+END CATCH;  
+ END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[usp_PipelineLog].[@isStart]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ControlETLRun]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ControlETLRun].[SourceSystem]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ControlETLRun].[Pipeline_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ControlETLRun].[Pipeline_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ControlETLRun].[Pipeline_Type]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ControlETLRun].[Pipeline_Load]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ControlETLRun].[StartDatetime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ControlETLRun].[Trigger_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ControlETLRun].[Trigger_Type]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_PipelineLog].[@sourceSystem]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_PipelineLog].[@pipelineID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_PipelineLog].[@pipelineName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_PipelineLog].[@pipelineType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_PipelineLog].[@pipelineLoad]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_PipelineLog].[@startDatetime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_PipelineLog].[@triggerName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_PipelineLog].[@triggerType]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ControlETLRun].[EndDatetime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_PipelineLog].[@endDateTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ControlETLRun].[Status]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_PipelineLog].[@status]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ControlETLRun].[RunAuditID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_PipelineLog].[@runAuditID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ControlETLRun].[Elapsed_Time]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[time]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_GetErrorInfo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_PipelineLog].[@isStart]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_PipelineLog].[@pipelineID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="250" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_PipelineLog].[@pipelineName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_PipelineLog].[@pipelineType]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="15" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_PipelineLog].[@pipelineLoad]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="15" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_PipelineLog].[@startDatetime]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_PipelineLog].[@endDateTime]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_PipelineLog].[@status]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="8" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_PipelineLog].[@runAuditID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bigint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_PipelineLog].[@triggerName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_PipelineLog].[@triggerType]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_PipelineLog].[@sourceSystem]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="1078" />
+				<Property Name="Length" Value="2438" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="/***************************************************************************************************    &#xD;&#xA;Procedure:          [dbo].[usp_PipelineLog]    &#xD;&#xA;Create Date:        2021-09-23    &#xD;&#xA;Author:             Viraj S. Dhokare    &#xD;&#xA;Description:        Procedure to log the pipeline start/end execution results.    &#xD;&#xA;****************************************************************************************************    &#xD;&#xA;SUMMARY OF CHANGES    &#xD;&#xA;    &#xD;&#xA;Date(yyyy-mm-dd)    Author              Comments    &#xD;&#xA;------------------- ------------------- ------------------------------------------------------------    &#xD;&#xA;2021-09-23          Viraj S. Dhokare    Initial Creation.    &#xD;&#xA;2021-10-05          Viraj S. Dhokare    Added parameters @pipelineType,@pipelineLoad.    &#xD;&#xA;2021-10-14          Viraj S. Dhokare&#x9;Added parameter @sourceSystem.&#xD;&#xA;2021-10-26          Abhilash.Gandi      Added parameter @triggerType.&#xD;&#xA;2021-11-08&#x9;&#x9;&#x9;Shashank Jain&#x9;&#x9;Added Try and Catch Block&#xD;&#xA;*******************************************************************************************************/    &#xD;&#xA;    &#xD;&#xA;CREATE PROCEDURE [dbo].[usp_PipelineLog]    &#xD;&#xA; @isStart        VARCHAR(1),    &#xD;&#xA; @pipelineID     VARCHAR(250),    &#xD;&#xA; @pipelineName   VARCHAR(100),    &#xD;&#xA; @pipelineType   VARCHAR(15),    &#xD;&#xA; @pipelineLoad   VARCHAR(15),    &#xD;&#xA; @startDatetime  DATETIME,    &#xD;&#xA; @endDateTime    DATETIME,    &#xD;&#xA; @status         VARCHAR(8),    &#xD;&#xA; @runAuditID     BIGINT,    &#xD;&#xA; @triggerName    VARCHAR(20),&#xD;&#xA; @triggerType    VARCHAR(20),&#xD;&#xA; @sourceSystem&#x9; VARCHAR(30)&#xD;&#xA;  &#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_TableLog]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[  
+ BEGIN  
+ BEGIN TRY
+  IF(@isStart = 1)  
+    BEGIN  
+	   INSERT INTO TableLog ([SourceSystem],[MasterPipeline_ID],[MasterPipeline_Name],[Pipeline_ID],[Pipeline_Name],[Table_Name],[Load_Start_Time])  
+	   VALUES (@sourceSystem,@masterPipelineID,@masterPipelineName,@pipelineID,@pipelineName,@tableName,@loadStartTime)  
+	END  
+  
+   ELSE  
+    BEGIN  
+     UPDATE TableLog  
+	 SET [Load_End_Time]	  = @loadEndTime,  
+		 [SourceCount]		  = @sourceCount,  
+		 [Records_fetched]    = @incrementCount,  
+		 [Insert_count_file]  = @fileCount,  
+		 [Insert_count_DB]    = @insertedCount,  
+		 [Update_count_DB]    = @updatedCount,  
+		 [TargetCount]        = @targetCount,  
+		 [Status]             = @status  
+	 WHERE [Pipeline_ID]  = @pipelineID  
+     AND [Table_Name]     = @tableName  
+  
+      UPDATE TableLog  
+	  SET [Elapsed_Time]  = CAST(([Load_End_Time]-[Load_Start_Time]) AS TIME(0))  
+	  WHERE [Pipeline_ID] = @pipelineID  
+	  AND [Table_Name]	  = @tableName  
+  END  
+  END TRY
+  BEGIN CATCH  
+    -- Execute error retrieval routine.  
+    EXECUTE dbo.usp_GetErrorInfo;  
+END CATCH;  
+ END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@isStart]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[SourceSystem]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[MasterPipeline_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[MasterPipeline_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[Pipeline_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[Pipeline_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[Table_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[Load_Start_Time]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@sourceSystem]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@masterPipelineID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@masterPipelineName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@pipelineID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@pipelineName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@tableName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@loadStartTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[Load_End_Time]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@loadEndTime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[SourceCount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@sourceCount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[Records_fetched]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@incrementCount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[Insert_count_file]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@fileCount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[Insert_count_DB]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@insertedCount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[Update_count_DB]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@updatedCount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[TargetCount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@targetCount]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[Status]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_TableLog].[@status]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[TableLog].[Elapsed_Time]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[time]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_GetErrorInfo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@isStart]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@pipelineID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="200" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@pipelineName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@tableName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@sourceCount]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@incrementCount]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@fileCount]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@targetCount]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@insertedCount]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@updatedCount]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@loadStartTime]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@loadEndTime]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@status]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="8" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@masterPipelineID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="200" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@masterPipelineName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_TableLog].[@sourceSystem]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="818" />
+				<Property Name="Length" Value="2505" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="/***************************************************************************************************  &#xD;&#xA;Procedure:          [dbo].[usp_TableLog]  &#xD;&#xA;Create Date:        2021-09-24  &#xD;&#xA;Author:             Viraj S. Dhokare  &#xD;&#xA;Description:        Procedure to log the table start/end execution results.  &#xD;&#xA;****************************************************************************************************  &#xD;&#xA;SUMMARY OF CHANGES  &#xD;&#xA;  &#xD;&#xA;Date(yyyy-mm-dd)    Author              Comments  &#xD;&#xA;------------------- ------------------- ------------------------------------------------------------  &#xD;&#xA;2021-09-24          Viraj S. Dhokare    Initial Creation.&#xD;&#xA;2021-11-08&#x9;&#x9;&#x9;Shashank Jain&#x9;&#x9;Added try and catch block&#xD;&#xA;&#xD;&#xA;  &#xD;&#xA;*******************************************************************************************************/ &#xD;&#xA;  &#xD;&#xA;CREATE PROCEDURE [dbo].[usp_TableLog]  &#xD;&#xA;@isStart&#x9;&#x9;&#x9;&#x9;VARCHAR(1),  &#xD;&#xA;@pipelineID&#x9;&#x9;&#x9;&#x9;VARCHAR(200),  &#xD;&#xA;@pipelineName&#x9;&#x9;&#x9;VARCHAR(100),  &#xD;&#xA;@tableName&#x9;&#x9;&#x9;&#x9;VARCHAR(100),  &#xD;&#xA;@sourceCount&#x9;&#x9;&#x9;VARCHAR(20),  &#xD;&#xA;@incrementCount&#x9;&#x9;&#x9;VARCHAR(20),  &#xD;&#xA;@fileCount&#x9;&#x9;&#x9;&#x9;VARCHAR(20),  &#xD;&#xA;@targetCount&#x9;&#x9;&#x9;VARCHAR(20),  &#xD;&#xA;@insertedCount&#x9;&#x9;&#x9;VARCHAR(20),  &#xD;&#xA;@updatedCount&#x9;&#x9;&#x9;VARCHAR(20),  &#xD;&#xA;@loadStartTime&#x9;&#x9;&#x9;DATETIME,  &#xD;&#xA;@loadEndTime&#x9;&#x9;&#x9;DATETIME,  &#xD;&#xA;@status&#x9;&#x9;&#x9;&#x9;&#x9;VARCHAR(8),  &#xD;&#xA;@masterPipelineID       VARCHAR(200),  &#xD;&#xA;@masterPipelineName     VARCHAR(100),&#xD;&#xA;@sourceSystem&#x9;&#x9;&#x9;VARCHAR(30)&#xD;&#xA;  &#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_UpdateWaterMark]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[  
+ BEGIN  
+ BEGIN TRY
+	 UPDATE [dbo].[Watermark_Tbllist]  
+	 SET [CreateTimestamp_LastFetched_Date] = @createTimestamp,  
+		 [UpdateTimestamp_LastFetched_Date] = @updateTimestamp  
+	 WHERE [Table_Name] = @tableName 
+ END TRY
+ BEGIN CATCH  
+    -- Execute error retrieval routine.  
+    EXECUTE dbo.usp_GetErrorInfo;  
+END CATCH;  
+ END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Watermark_Tbllist]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Watermark_Tbllist].[CreateTimestamp_LastFetched_Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_UpdateWaterMark].[@createTimestamp]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Watermark_Tbllist].[UpdateTimestamp_LastFetched_Date]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_UpdateWaterMark].[@updateTimestamp]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Watermark_Tbllist].[Table_Name]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_UpdateWaterMark].[@tableName]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[usp_GetErrorInfo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_UpdateWaterMark].[@tableName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_UpdateWaterMark].[@createTimestamp]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[usp_UpdateWaterMark].[@updateTimestamp]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="CreateOffset" Value="820" />
+				<Property Name="Length" Value="1316" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="/***************************************************************************************************  &#xD;&#xA;Procedure:          [dbo].[usp_UpdateWaterMark]  &#xD;&#xA;Create Date:        2021-09-28  &#xD;&#xA;Author:             Viraj S. Dhokare  &#xD;&#xA;Description:        Procedure to update the Timestamp in the WaterMark table.  &#xD;&#xA;****************************************************************************************************  &#xD;&#xA;SUMMARY OF CHANGES  &#xD;&#xA;  &#xD;&#xA;Date(yyyy-mm-dd)    Author              Comments  &#xD;&#xA;------------------- ------------------- ------------------------------------------------------------  &#xD;&#xA;2021-09-28          Viraj S. Dhokare    Initial Creation.  &#xD;&#xA;2021-11-08&#x9;&#x9;&#x9;Shashank Jain&#x9;&#x9;Added Try Catch Block&#xD;&#xA;*******************************************************************************************************/  &#xD;&#xA;  &#xD;&#xA;CREATE PROCEDURE [dbo].[usp_UpdateWaterMark]  &#xD;&#xA;@tableName&#x9;&#x9;&#x9;&#x9;VARCHAR(100),  &#xD;&#xA;@createTimestamp&#x9;&#x9;DATETIME,  &#xD;&#xA;@updateTimestamp        DATETIME  &#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[Watermark_Tbllist]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Watermark_Tbllist].[Watermark_ID]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Watermark_Tbllist].[Table_Name]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Watermark_Tbllist].[UpdateTimestamp_WaterMark]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Watermark_Tbllist].[UpdateTimestamp_LastFetched_Date]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Watermark_Tbllist].[CreateTimestamp_WaterMark]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="70" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[Watermark_Tbllist].[CreateTimestamp_LastFetched_Date]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlSchema" Name="[precheck_db]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+	</Model>
+</DataSchemaModel>
